@@ -27,13 +27,19 @@ contract Pool is ContextUpgradeable, Initializable, OwnableUpgradeable {
     //reward Token 
     IERC20 rewardToken;
 
+    //mapp of blacklisted accounted
     mapping(address => bool) public blacklisted;
+
+    struct PoolInfo {
+        address token; // token contract for the lp token or single token
+        
+    }
 
     /**
      * add or remove blacklist
      * @param _option a boolean value of yes or no
      */
-    function doBlacklist(address _account, _option bool) public onlyOwner {
+    function doBlacklist(address _account, bool _option) public onlyOwner {
         blacklisted[_account] = _option;
     } 
 

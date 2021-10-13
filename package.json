@@ -7,7 +7,7 @@
     "test": "npm run clean && npx hardhat test",
     "c": "npx hardhat compile",
     "clean": "npx hardhat clean",
-    "f": "npx solpp ./contracts/PBull.sol --output ./flattened.sol",
+    "f": "npx solpp ./contracts/factory.sol --output ./flattened.sol",
     "deploy_kovan": "npx hardhat deploy --network kovan --reset",
     "deploy_local": "npx hardhat deploy --network localhost --reset",
     "deploy_rinkeby": "npx hardhat deploy --network rinkeby --reset",
