@@ -17,12 +17,26 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 contract Pool is ContextUpgradeable, Initializable, OwnableUpgradeable {
     
 
-    function intialize() initializer {
+    function intializePool() initializer {
 
         //initialize 
         __Context_init_unchained();
         __Ownable_init_unchained();
     }
 
-    
-}
+    //reward Token 
+    IERC20 rewardToken;
+
+    mapping(address => bool) public blacklisted;
+
+    /**
+     * add or remove blacklist
+     * @param _option a boolean value of yes or no
+     */
+    function doBlacklist(address _account, _option bool) public onlyOwner {
+        blacklisted[_account] = _option;
+    } 
+
+
+
+} //end contract
